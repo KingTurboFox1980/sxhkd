@@ -114,6 +114,8 @@ shift + F5
 # Web Search
 super + s
     /home/j3ll0/.config/scripts/dmenu-websearch.sh
+super + shift + s
+    /home/j3ll0/.config/scripts/rofi-websearch.sh
 
 # Web Browsers
 super + w
