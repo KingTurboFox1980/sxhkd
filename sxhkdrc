@@ -5,19 +5,27 @@
 # ███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝
 # ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝
 
-# Audio Controls
+# Volume Controls
 F1
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 XF86AudioLowerVolume
-    pactl set-sink-volume @DEFAULT_SINK@ -5%
+    pactl set-sink-volume @DEFAULT_SINK@ -10%
 XF86AudioRaiseVolume
-    pactl set-sink-volume @DEFAULT_SINK@ +5%
+    pactl set-sink-volume @DEFAULT_SINK@ +10%
+
+# Media Controls
 XF86AudioPlay / Pause
     playerctl play-pause
 XF86AudioNext
     playerctl next
 XF86AudioPrev
     playerctl previous
+
+# Keyboard Brightness Controls
+XF86KbdBrightnessDown
+    asusctl --prev-kbd-bright
+XF86KbdBrightnessUp
+    asusctl --next-kbd-bright
 
 # Screen Brightness Controls
 F6
@@ -35,12 +43,6 @@ F9
 XF86AudioMicMute
     /home/j3ll0/.config/scripts/wallpaper.sh
 
-# Keyboard Brightness Controls
-XF86KbdBrightnessDown
-    asusctl --prev-kbd-bright
-XF86KbdBrightnessUp
-    asusctl --next-kbd-bright
-
 # DPMS (Display Power Management Signaling)
 F11
     xset dpms force off
@@ -56,14 +58,16 @@ super + KP_Add
     exec kitty -e /home/j3ll0/update.sh
 KP_Multiply
     /home/j3ll0/.config/scripts/dwmconfig.sh
-
+    
 # Applications and Utilities
-super + o
-    onenote-desktop
-super + e
-    evolution
 super + c
     code-oss
+super + e
+    evolution
+super + o
+    onenote-desktop
+super + r
+    rclone-browser
 super + v
     virt-manager
 super + Escape
@@ -93,13 +97,11 @@ super + t
 
 # Launchers
 super + z
-    rofi -show drun
+     rofi -modes "drun,run,window,ssh,combi" -show drun
 super + shift + z
     /home/j3ll0/.config/scripts/dmenu.sh
 
 # Media Playback and Volume Controls
-super + shift + v
-    vlc --video-on-top
 super + shift + v
     pavucontrol
 super + a
