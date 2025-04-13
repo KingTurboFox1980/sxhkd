@@ -14,7 +14,7 @@ XF86AudioRaiseVolume
     pactl set-sink-volume @DEFAULT_SINK@ +10%
 
 # Media Controls
-XF86AudioPlay / Pause
+XF86AudioPlay
     playerctl play-pause
 XF86AudioNext
     playerctl next
