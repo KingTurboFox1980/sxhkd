@@ -4,62 +4,7 @@
 # ╚════██║ ██╔██╗ ██╔══██║██╔═██╗ ██║  ██║
 # ███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝
 # ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝
-
-# Volume Controls
-F1
-    pactl set-sink-mute @DEFAULT_SINK@ toggle
-XF86AudioLowerVolume
-    pactl set-sink-volume @DEFAULT_SINK@ -10%
-XF86AudioRaiseVolume
-    pactl set-sink-volume @DEFAULT_SINK@ +10%
-
-# Media Controls
-XF86AudioPlay
-    playerctl play-pause
-XF86AudioNext
-    playerctl next
-XF86AudioPrev
-    playerctl previous
-
-# Keyboard Brightness Controls
-XF86KbdBrightnessDown
-    asusctl --prev-kbd-bright
-XF86KbdBrightnessUp
-    asusctl --next-kbd-bright
-
-# Screen Brightness Controls
-F6
-    /home/j3ll0/.config/scripts/brightOFF.sh
-F7
-    brightnessctl set 5%-
-F8
-    brightnessctl set +5%
-shift + F9
-    /home/j3ll0/.config/scripts/redshift.sh
-
-# Screen Management
-F9
-    arandr
-XF86AudioMicMute
-    /home/j3ll0/.config/scripts/wallpaper.sh
-
-# DPMS (Display Power Management Signaling)
-F11
-    xset dpms force off
-
-# Custom Scripts
-XF86Launch1
-    /home/j3ll0/.config/scripts/dwmfolders.sh
-KP_Subtract
-    /home/j3ll0/.config/scripts/rog_key_scripts.sh
-KP_Add
-    /home/j3ll0/.config/scripts/dmenu_check_update.sh
-super + KP_Add
-    exec kitty -e /home/j3ll0/update.sh
-KP_Multiply
-    /home/j3ll0/.config/scripts/dwmconfig.sh
-    
-# Applications and Utilities
+####Applications and Utilities####
 super + c
     code-oss
 super + e
@@ -79,54 +24,110 @@ super + Return
 Print
     flameshot gui
 
-# Notifications Management
-super + n
-    /home/j3ll0/.config/scripts/pause_dunst.sh
+####Custom Scripts####
+XF86Launch1
+    /home/j3ll0/.config/scripts/dwmfolders.sh
+KP_Subtract
+    /home/j3ll0/.config/scripts/rog_key_scripts.sh
+KP_Add
+    /home/j3ll0/.config/scripts/dmenu_check_update.sh
+super + KP_Add
+    exec kitty -e /home/j3ll0/update.sh
+KP_Multiply
+    /home/j3ll0/.config/scripts/dwmconfig.sh
 
-# Polybar Launch
-KP_Divide
-    /home/j3ll0/.config/polybar/launch.sh
+####DPMS (Display Power Management Signaling)####
+F11
+    xset dpms force off
 
-# Powermenu
-super + x
-    /home/j3ll0/.config/scripts/powermenu/powermenu.sh
-
-# File Manager
+####File Manager####
 super + t
     thunar
 
-# Launchers
-super + z
-     rofi -modes "drun,run,window,ssh,combi" -show drun
-super + shift + z
-    /home/j3ll0/.config/scripts/dmenu.sh
+####Keyboard Brightness Controls####
+XF86KbdBrightnessDown
+    asusctl --prev-kbd-bright
+XF86KbdBrightnessUp
+    asusctl --next-kbd-bright
 
-# Media Playback and Volume Controls
-super + shift + v
-    pavucontrol
-super + a
-    apple-music-for-linux & com.github.wwmm.easyeffects
-
-# Key Hints
+####Key Hints####
 F5
     /home/j3ll0/.config/polybar/scripts/keyhintdwm.sh
 shift + F5
     /home/j3ll0/.config/polybar/scripts/keyhintvim.sh
 
-# Web Search
-super + s
-    /home/j3ll0/.config/scripts/dmenu-websearch.sh
-super + shift + s
-    /home/j3ll0/.config/scripts/rofi-websearch.sh
+####Launchers####
+super + z
+     rofi -modes "drun,run,window,ssh,combi" -show drun
+super + shift + z
+    /home/j3ll0/.config/scripts/dmenu.sh
 
-# Web Browsers
+####Media Controls####
+XF86AudioPlay
+    playerctl play-pause
+XF86AudioNext
+    playerctl next
+XF86AudioPrev
+    playerctl previous
+
+####Media Playback and Volume Controls####
+super + shift + v
+    pavucontrol
+super + a
+    apple-music-for-linux & com.github.wwmm.easyeffects
+
+####Notifications####
+super + n
+    /home/j3ll0/.config/scripts/pause_dunst.sh
+
+####Picom####    
+F12
+    /home/j3ll0/.config/scripts/picom-toggle.sh
+
+####Polybar####
+KP_Divide
+    /home/j3ll0/.config/polybar/launch.sh
+
+####Powermenu####
+super + x
+    /home/j3ll0/.config/scripts/powermenu/powermenu.sh
+
+####Recompile DWM####
+super + shift + r
+    exec kitty -e /home/j3ll0/.suckless/recompile.sh
+
+####Screen Brightness####
+F6
+    /home/j3ll0/.config/scripts/brightOFF.sh
+F7
+    brightnessctl set 5%-
+F8
+    brightnessctl set +5%
+shift + F9
+    /home/j3ll0/.config/scripts/redshift.sh
+
+####Screen Management####
+F9
+    arandr
+XF86AudioMicMute
+    /home/j3ll0/.config/scripts/wallpaper.sh
+
+####Volume####
+F1
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -10%
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +10%
+
+####Web Browsers####
 super + w
     vivaldi
 super + shift + w
     microsoft-edge-stable
 
-# Recompile Scripts
-super + shift + r
-    exec kitty -e /home/j3ll0/.suckless/recompile.sh
-ctrl + alt + o
-    /home/j3ll0/.config/scripts/picom-toggle.sh
+####Web Search####
+super + s
+    /home/j3ll0/.config/scripts/dmenu-websearch.sh
+super + shift + s
+    /home/j3ll0/.config/scripts/rofi-websearch.sh
