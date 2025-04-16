@@ -53,7 +53,7 @@ XF86Launch1
 KP_Subtract
     /home/j3ll0/.config/scripts/rog_key_scripts.sh
 KP_Add
-    /home/j3ll0/.config/scripts/maintenance.sh
+    /home/j3ll0/.config/scripts/dmenu_check_update.sh
 super + KP_Add
     exec kitty -e /home/j3ll0/update.sh
 KP_Multiply
@@ -105,7 +105,7 @@ super + shift + z
 super + shift + v
     pavucontrol
 super + a
-    flatpak run sh.cider.Cider & com.github.wwmm.easyeffects
+    apple-music-for-linux & com.github.wwmm.easyeffects
 
 # Key Hints
 F5
