@@ -52,9 +52,9 @@ XF86KbdBrightnessUp
 
 ####Key Hints####
 F5
-    /home/j3ll0/.config/polybar/scripts/keyhintdwm.sh
+    /home/j3ll0/.config/scripts/polybar/keyhintdwm.sh
 shift + F5
-    /home/j3ll0/.config/polybar/scripts/keyhintvim.sh
+    /home/j3ll0/.config/scripts/polybar/keyhintvim.sh
 
 ####Launchers####
 super + z
@@ -99,10 +99,8 @@ super + shift + r
 ####Screen Brightness####
 F6
     /home/j3ll0/.config/scripts/brightOFF.sh
-F7
-    brightnessctl set 5%-
-F8
-    brightnessctl set +5%
+XF86MonBrightness{Down,Up}
+	brightnessctl set 10%{-,+}
 shift + F9
     /home/j3ll0/.config/scripts/redshift.sh
 
@@ -115,10 +113,8 @@ XF86AudioMicMute
 ####Volume####
 F1
     pactl set-sink-mute @DEFAULT_SINK@ toggle
-XF86AudioLowerVolume
-    pactl set-sink-volume @DEFAULT_SINK@ -10%
-XF86AudioRaiseVolume
-    pactl set-sink-volume @DEFAULT_SINK@ +10%
+XF86Audio{Lower,Raise}Volume
+	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
 
 ####Web Browsers####
 super + w
